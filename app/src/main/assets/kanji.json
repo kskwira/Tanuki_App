@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "sign": "日",
+    "onyomi": ["ニチ", "ジツ"],
+    "onyomiRomaji": ["nichi", "jitsu"],
+    "kunyomi": ["ひ", "-び", "-か"],
+    "kunyomiRomaji": ["hi", "-bi", "-ka"],
+    "meaning": ["dzień", "słońce", "Japonia", "liczebnik dni"],
+    "level": 1
+  },
+  {
+    "id": 2,
+    "sign": "一",
+    "onyomi": ["イチ"],
+    "onyomiRomaji": ["ichi"],
+    "kunyomi": ["ひと(つ)"],
+    "kunyomiRomaji": ["hito(tsu)"],
+    "meaning": ["jeden", "1"],
+    "level": 1
+  },
+  {
+    "id": 3,
+    "sign": "国",
+    "onyomi": ["コク"],
+    "onyomiRomaji": ["koku"],
+    "kunyomi": ["くに"],
+    "kunyomiRomaji": ["kuni"],
+    "meaning": ["kraj"],
+    "level": 1
+  },
+  {
+    "id": 4,
+    "sign": "人",
+    "onyomi": ["ジン", "ニン"],
+    "onyomiRomaji": ["jin", "nin"],
+    "kunyomi": ["ひと"],
+    "kunyomiRomaji": ["hito"],
+    "meaning": ["człowiek"],
+    "level": 1
+  },
+  {
+    "id": 5,
+    "sign": "年",
+    "onyomi": ["ネン"],
+    "onyomiRomaji": ["nen"],
+    "kunyomi": ["とし"],
+    "kunyomiRomaji": ["toshi"],
+    "meaning": ["rok", "licznik lat"],
+    "level": 1
+  },
+  {
+    "id": 6,
+    "sign": "大",
+    "onyomi": ["ダイ", "タイ"],
+    "onyomiRomaji": ["dai", "tai"],
+    "kunyomi": ["おお(きい)"],
+    "kunyomiRomaji": ["oo(kii)"],
+    "meaning": ["duży", "wielki"],
+    "level": 1
+  },
+  {
+    "id": 7,
+    "sign": "十",
+    "onyomi": ["ジュウ"],
+    "onyomiRomaji": ["juu"],
+    "kunyomi": ["とお", "と"],
+    "kunyomiRomaji": ["tou", "to"],
+    "meaning": ["dziesięć", "10"],
+    "level": 1
+  },
+  {
+    "id": 8,
+    "sign": "二",
+    "onyomi": ["ニ", "ジ"],
+    "onyomiRomaji": ["ni", "ji"],
+    "kunyomi": ["ふた(つ)"],
+    "kunyomiRomaji": ["futa(tsu)"],
+    "meaning": ["dwa", "2"],
+    "level": 1
+  },
+  {
+    "id": 9,
+    "sign": "本",
+    "onyomi": ["ホン"],
+    "onyomiRomaji": ["hon"],
+    "kunyomi": ["もと"],
+    "kunyomiRomaji": ["moto"],
+    "meaning": ["książka", "teraźniejszość", "prawda", "licznik długich cylindrycznych rzeczy"],
+    "level": 1
+  },
+  {
+    "id": 10,
+    "sign": "中",
+    "onyomi": ["チュウ"],
+    "onyomiRomaji": ["chuu"],
+    "kunyomi": ["なか", "うち", "あた(る)"],
+    "kunyomiRomaji": ["naka", "uchi", "ata(ru)"],
+    "meaning": ["w środku", "środek"],
+    "level": 1
+  },
+  {
+    "id": 11,
+    "sign": "長",
+    "onyomi": ["チョウ"],
+    "onyomiRomaji": ["chou"],
+    "kunyomi": ["なが(い)", "おさ"],
+    "kunyomiRomaji": ["naga(i)", "osa"],
+    "meaning": ["długi", "przywódca", "przełożony", "senior"],
+    "level": 2
+  },
+  {
+    "id": 12,
+    "sign": "出",
+    "onyomi": ["シュツ", "スイ"],
+    "onyomiRomaji": ["shutsu", "sui"],
+    "kunyomi": ["で(る)", "だ(す)", "い(でる)"],
+    "kunyomiRomaji": ["de(ru)", "da(su)", "i(deru)"],
+    "meaning": ["wyjście", "wyjdź"],
+    "level": 2
+  },
+  {
+    "id": 13,
+    "sign": "三",
+    "onyomi": ["サン"],
+    "onyomiRomaji": ["san"],
+    "kunyomi": ["み(つ)"],
+    "kunyomiRomaji": ["mi(tsu)"],
+    "meaning": ["trzy", "3"],
+    "level": 2
+  },
+  {
+    "id": 14,
+    "sign": "時",
+    "onyomi": ["ジ"],
+    "onyomiRomaji": ["ji"],
+    "kunyomi": ["とき", "-どき"],
+    "kunyomiRomaji": ["toki", "doki"],
+    "meaning": ["czas", "godzina"],
+    "level": 2
+  },
+  {
+    "id": 15,
+    "sign": "行",
+    "onyomi": ["コウ", "ギョウ", "アン"],
+    "onyomiRomaji": ["kou", "gyou", "an"],
+    "kunyomi": ["い(く)", "ゆ(く)", "おこな(う)"],
+    "kunyomiRomaji": ["i(ku)", "yu(ku)", "okona(u)"],
+    "meaning": ["iść", "podróż", "przeprowadzić", "linia"],
+    "level": 2
+  },
+  {
+    "id": 16,
+    "sign": "見",
+    "onyomi": ["ケン"],
+    "onyomiRomaji": ["ken"],
+    "kunyomi": ["み(る)", "み(せる)"],
+    "kunyomiRomaji": ["mi(ru)", "mi(seru)"],
+    "meaning": ["zobacz", "nadzieje", "szanse", "pomysł"],
+    "level": 2
+  },
+  {
+    "id": 17,
+    "sign": "月",
+    "onyomi": ["ゲツ", "ガツ"],
+    "onyomiRomaji": ["getsu", "gatsu"],
+    "kunyomi": ["つき"],
+    "kunyomiRomaji": ["tsuki"],
+    "meaning": ["miesiąc", "księżyc"],
+    "level": 2
+  },
+  {
+    "id": 18,
+    "sign": "分",
+    "onyomi": ["ブン", "フン", "ブ"],
+    "onyomiRomaji": ["bun", "fun", "bu"],
+    "kunyomi": ["わ(ける)"],
+    "kunyomiRomaji": ["wa(keru)"],
+    "meaning": ["część", "minuta", "zrozum"],
+    "level": 2
+  },
+  {
+    "id": 19,
+    "sign": "後",
+    "onyomi": ["ゴ", "コウ"],
+    "onyomiRomaji": ["go", "kou"],
+    "kunyomi": ["のち", "うし(ろ)", "あと"],
+    "kunyomiRomaji": ["nochi", "ushi(ro)", "ato"],
+    "meaning": ["z tyłu", "tył", "później"],
+    "level": 2
+  },
+  {
+    "id": 20,
+    "sign": "前",
+    "onyomi": ["ゼン"],
+    "onyomiRomaji": ["zen"],
+    "kunyomi": ["まえ"],
+    "kunyomiRomaji": ["mae"],
+    "meaning": ["przed"],
+    "level": 2
+  },
+  {
+    "id": 21,
+    "sign": "生",
+    "onyomi": ["セイ", "ショウ"],
+    "onyomiRomaji": ["sei", "shou"],
+    "kunyomi": ["い(きる)", "う(む)", "お(う)", "は(える)", "なま"],
+    "kunyomiRomaji": ["i(kiru)", "u(mu)", "o(u)", "ha(eru)", "nama"],
+    "meaning": ["życie", "prawdziwe", "narodziny"],
+    "level": 3
+  },
+  {
+    "id": 22,
+    "sign": "五",
+    "onyomi": ["ゴ"],
+    "onyomiRomaji": ["go"],
+    "kunyomi": ["いつ(つ)"],
+    "kunyomiRomaji": ["itsu(tsu)"],
+    "meaning": ["pięć", "5"],
+    "level": 3
+  },
+  {
+    "id": 23,
+    "sign": "間",
+    "onyomi": ["カン", "ケン"],
+    "onyomiRomaji": ["kan", "ken"],
+    "kunyomi": ["あいだ", "ま", "あい"],
+    "kunyomiRomaji": ["aida", "ma", "ai"],
+    "meaning": ["interwał", "przestrzeń"],
+    "level": 3
+  },
+  {
+    "id": 24,
+    "sign": "上",
+    "onyomi": ["ジョウ", "ショウ", "シャン"],
+    "onyomiRomaji": ["jou", "shou", "shan"],
+    "kunyomi": ["うえ", "うわ-", "かみ", "あ(げる)", "のぼ(る)", "たてまつ(る)"],
+    "kunyomiRomaji": ["ue", "uwa", "kami", "a(geru)", "nobo(ru)", "tatematsu(ru)"],
+    "meaning": ["powyżej", "góra"],
+    "level": 3
+  },
+  {
+    "id": 25,
+    "sign": "東",
+    "onyomi": ["トウ"],
+    "onyomiRomaji": ["tou"],
+    "kunyomi": ["ひがし"],
+    "kunyomiRomaji": ["higashi"],
+    "meaning": ["wschód"],
+    "level": 3
+  },
+  {
+    "id": 26,
+    "sign": "四",
+    "onyomi": ["シ"],
+    "onyomiRomaji": ["shi"],
+    "kunyomi": ["よ(つ)", "よん"],
+    "kunyomiRomaji": ["yo(tsu)", "yon"],
+    "meaning": ["cztery", "4"],
+    "level": 3
+  },
+  {
+    "id": 27,
+    "sign": "今",
+    "onyomi": ["コン", "キン"],
+    "onyomiRomaji": ["kon", "kin"],
+    "kunyomi": ["いま"],
+    "kunyomiRomaji": ["ima"],
+    "meaning": ["teraz", "czas teraźniejszy"],
+    "level": 3
+  },
+  {
+    "id": 28,
+    "sign": "金",
+    "onyomi": ["キン", "コン", "ゴン"],
+    "onyomiRomaji": ["kin", "kon", "gon"],
+    "kunyomi": ["かね", "かな-", "-がね"],
+    "kunyomiRomaji": ["kane", "kana", "gane"],
+    "meaning": ["złoto"],
+    "level": 3
+  },
+  {
+    "id": 29,
+    "sign": "九",
+    "onyomi": ["キュウ", "ク"],
+    "onyomiRomaji": ["kyuu", "ku"],
+    "kunyomi": ["ここの(つ)"],
+    "kunyomiRomaji": ["kokono(tsu)"],
+    "meaning": ["dziewięć", "9"],
+    "level": 3
+  },
+  {
+    "id": 30,
+    "sign": "入",
+    "onyomi": ["ニュウ"],
+    "onyomiRomaji": ["nyuu"],
+    "kunyomi": ["い(る)", "はい(る)"],
+    "kunyomiRomaji": ["i(ru)", "hai(ru)"],
+    "meaning": ["wprowadź", "wstaw"],
+    "level": 3
+  },
+  {
+    "id": 31,
+    "sign": "学",
+    "onyomi": ["ガク"],
+    "onyomiRomaji": ["gaku"],
+    "kunyomi": ["まな(ぶ)"],
+    "kunyomiRomaji": ["mana(bu)"],
+    "meaning": ["studiować", "uczyć się", "nauka"],
+    "level": 4
+  },
+  {
+    "id": 32,
+    "sign": "高",
+    "onyomi": ["コウ"],
+    "onyomiRomaji": ["kou"],
+    "kunyomi": ["たか(い)"],
+    "kunyomiRomaji": ["taka(i)"],
+    "meaning": ["wysoki", "wysoko", "drogi"],
+    "level": 4
+  },
+  {
+    "id": 33,
+    "sign": "円",
+    "onyomi": ["エン"],
+    "onyomiRomaji": ["en"],
+    "kunyomi": ["まる(い)"],
+    "kunyomiRomaji": ["maru(i)"],
+    "meaning": ["koło", "jen", "okrągły"],
+    "level": 4
+  },
+  {
+    "id": 34,
+    "sign": "子",
+    "onyomi": ["シ", "ス", "ツ"],
+    "onyomiRomaji": ["shi", "su", "tsu"],
+    "kunyomi": ["こ", "ね"],
+    "kunyomiRomaji": ["ko", "ne"],
+    "meaning": ["dziecko"],
+    "level": 4
+  },
+  {
+    "id": 35,
+    "sign": "外",
+    "onyomi": ["ガイ", "ゲ"],
+    "onyomiRomaji": ["gai", "ge"],
+    "kunyomi": ["そと", "ほか", "はず(す)", "と-"],
+    "kunyomiRomaji": ["soto", "hoka", "hazu-", "to-"],
+    "meaning": ["na zewnątrz", "poza"],
+    "level": 4
+  },
+  {
+    "id": 36,
+    "sign": "八",
+    "onyomi": ["ハチ"],
+    "onyomiRomaji": ["hachi"],
+    "kunyomi": ["や(つ)", "よう"],
+    "kunyomiRomaji": ["ya(tsu)", "you"],
+    "meaning": ["osiem", "8"],
+    "level": 4
+  },
+  {
+    "id": 37,
+    "sign": "六",
+    "onyomi": ["ロク"],
+    "onyomiRomaji": ["roku"],
+    "kunyomi": ["む(つ)", "むい"],
+    "kunyomiRomaji": ["mu(tsu)", "mui"],
+    "meaning": ["sześć", "6"],
+    "level": 4
+  },
+  {
+    "id": 38,
+    "sign": "下",
+    "onyomi": ["カ", "ゲ"],
+    "onyomiRomaji": ["ka", "ge"],
+    "kunyomi": ["した", "しも", "もと", "さ(げる)", "くだ(る)", "お(ろす)"],
+    "kunyomiRomaji": ["shita", "shimo", "moto", "sa(geru)", "kuda(ru)", "o(rosu)"],
+    "meaning": ["poniżej", "w dół", "schodzić", "dawać"],
+    "level": 4
+  },
+  {
+    "id": 39,
+    "sign": "来",
+    "onyomi": ["ライ", "タイ"],
+    "onyomiRomaji": ["rai", "tai"],
+    "kunyomi": ["く(る)", "きた(る)", "き", "こ"],
+    "kunyomiRomaji": ["ku(ru)", "kita(ru)", "ki", "ko"],
+    "meaning": ["przyjdź", "z powodu", "następny", "powód"],
+    "level": 4
+  },
+  {
+    "id": 40,
+    "sign": "気",
+    "onyomi": ["キ", "ケ"],
+    "onyomiRomaji": ["ki", "ke"],
+    "kunyomi": ["いき"],
+    "kunyomiRomaji": ["iki"],
+    "meaning": ["duch", "umysł", "powietrze", "atmosfera"],
+    "level": 4
+  },
+  {
+    "id": 41,
+    "sign": "小",
+    "onyomi": ["ショウ"],
+    "onyomiRomaji": ["shou"],
+    "kunyomi": ["ちい(さい)", "こ-", "お-", "さ-"],
+    "kunyomiRomaji": ["chii(sai)", "ko-", "o-", "sa-"],
+    "meaning": ["malutki", "mały"],
+    "level": 5
+  },
+  {
+    "id": 42,
+    "sign": "七",
+    "onyomi": ["シチ"],
+    "onyomiRomaji": ["shichi"],
+    "kunyomi": ["なな(つ)", "なの"],
+    "kunyomiRomaji": ["nana(tsu)", "nano"],
+    "meaning": ["siedem", "7"],
+    "level": 5
+  },
+  {
+    "id": 43,
+    "sign": "山",
+    "onyomi": ["サン", "セン"],
+    "onyomiRomaji": ["san", "sen"],
+    "kunyomi": ["やま"],
+    "kunyomiRomaji": ["yama"],
+    "meaning": ["góra"],
+    "level": 5
+  },
+  {
+    "id": 44,
+    "sign": "話",
+    "onyomi": ["ワ"],
+    "onyomiRomaji": ["wa"],
+    "kunyomi": ["はな(す)", "はなし"],
+    "kunyomiRomaji": ["hana(su)", "hanashi"],
+    "meaning": ["opowieść", "rozmowa"],
+    "level": 5
+  },
+  {
+    "id": 45,
+    "sign": "女",
+    "onyomi": ["ジョ"],
+    "onyomiRomaji": ["jo"],
+    "kunyomi": ["おんな", "め"],
+    "kunyomiRomaji": ["onnna", "me"],
+    "meaning": ["kobieta"],
+    "level": 5
+  },
+  {
+    "id": 46,
+    "sign": "北",
+    "onyomi": ["ホク"],
+    "onyomiRomaji": ["hoku"],
+    "kunyomi": ["きた"],
+    "kunyomiRomaji": ["kita"],
+    "meaning": ["północ"],
+    "level": 5
+  },
+  {
+    "id": 47,
+    "sign": "午",
+    "onyomi": ["ゴ"],
+    "onyomiRomaji": ["go"],
+    "kunyomi": ["うま"],
+    "kunyomiRomaji": ["uma"],
+    "meaning": ["południe", "znak konia"],
+    "level": 5
+  },
+  {
+    "id": 48,
+    "sign": "百",
+    "onyomi": ["ヒャク", "ビャク"],
+    "onyomiRomaji": ["hyaku", "byaku"],
+    "kunyomi": ["もも"],
+    "kunyomiRomaji": ["momo"],
+    "meaning": ["sto"],
+    "level": 5
+  },
+  {
+    "id": 49,
+    "sign": "書",
+    "onyomi": ["ショ"],
+    "onyomiRomaji": ["sho"],
+    "kunyomi": ["か(く)"],
+    "kunyomiRomaji": ["kaku"],
+    "meaning": ["pisać"],
+    "level": 5
+  },
+  {
+    "id": 50,
+    "sign": "先",
+    "onyomi": ["セン"],
+    "onyomiRomaji": ["sen"],
+    "kunyomi": ["さき", "ま(ず)"],
+    "kunyomiRomaji": ["saki", "ma(zu)"],
+    "meaning": ["przed", "z wyprzedzeniem", "poprzedni", "przyszłość"],
+    "level": 5
+  },
+  {
+    "id": 51,
+    "sign": "名",
+    "onyomi": ["メイ", "ミョウ"],
+    "onyomiRomaji": ["mei", "myou"],
+    "kunyomi": ["な"],
+    "kunyomiRomaji": ["na"],
+    "meaning": ["nazwisko", "odnotowane", "wyróżnione", "reputacja"],
+    "level": 6
+  },
+  {
+    "id": 52,
+    "sign": "川",
+    "onyomi": ["セン"],
+    "onyomiRomaji": ["sen"],
+    "kunyomi": ["かわ"],
+    "kunyomiRomaji": ["kawa"],
+    "meaning": ["rzeka", "strumień"],
+    "level": 6
+  },
+  {
+    "id": 53,
+    "sign": "千",
+    "onyomi": ["セン"],
+    "onyomiRomaji": ["sen"],
+    "kunyomi": ["ち"],
+    "kunyomiRomaji": ["chi"],
+    "meaning": ["tysiąc"],
+    "level": 6
+  },
+  {
+    "id": 54,
+    "sign": "水",
+    "onyomi": ["スイ"],
+    "onyomiRomaji": ["sui"],
+    "kunyomi": ["みず"],
+    "kunyomiRomaji": ["mizu"],
+    "meaning": ["woda"],
+    "level": 6
+  },
+  {
+    "id": 55,
+    "sign": "半",
+    "onyomi": ["ハン"],
+    "onyomiRomaji": ["han"],
+    "kunyomi": ["なか(ば)"],
+    "kunyomiRomaji": ["naka(ba)"],
+    "meaning": ["połowa", "środek", "liczba nieparzysta", "w pół"],
+    "level": 6
+  },
+  {
+    "id": 56,
+    "sign": "男",
+    "onyomi": ["ダン", "ナン"],
+    "onyomiRomaji": ["dan", "nan"],
+    "kunyomi": ["おとこ", "お"],
+    "kunyomiRomaji": ["otoko", "o"],
+    "meaning": ["mężczyzna"],
+    "level": 6
+  },
+  {
+    "id": 57,
+    "sign": "西",
+    "onyomi": ["セイ", "サイ"],
+    "onyomiRomaji": ["sei", "sai"],
+    "kunyomi": ["にし"],
+    "kunyomiRomaji": ["nishi"],
+    "meaning": ["zachód"],
+    "level": 6
+  },
+  {
+    "id": 58,
+    "sign": "電",
+    "onyomi": ["デン"],
+    "onyomiRomaji": ["den"],
+    "kunyomi": ["-"],
+    "kunyomiRomaji": ["-"],
+    "meaning": ["prąd", "zasilany elektrycznie"],
+    "level": 6
+  },
+  {
+    "id": 59,
+    "sign": "校",
+    "onyomi": ["コウ"],
+    "onyomiRomaji": ["kou"],
+    "kunyomi": ["-"],
+    "kunyomiRomaji": ["-"],
+    "meaning": ["szkoła", "egzamin"],
+    "level": 6
+  },
+  {
+    "id": 60,
+    "sign": "語",
+    "onyomi": ["ゴ"],
+    "onyomiRomaji": ["go"],
+    "kunyomi": ["かた(る)"],
+    "kunyomiRomaji": ["kata(ru)"],
+    "meaning": ["słowo", "mowa", "język"],
+    "level": 6
+  },
+  {
+    "id": 61,
+    "sign": "土",
+    "onyomi": ["ド", "ト"],
+    "onyomiRomaji": ["do", "to"],
+    "kunyomi": ["つち"],
+    "kunyomiRomaji": ["tsuchi"],
+    "meaning": ["gleba", "ziemia", "grunt"],
+    "level": 7
+  },
+  {
+    "id": 62,
+    "sign": "木",
+    "onyomi": ["ボク", "モク"],
+    "onyomiRomaji": ["boku", "moku"],
+    "kunyomi": ["き", "こ-"],
+    "kunyomiRomaji": ["ki", "ko"],
+    "meaning": ["drzewo", "drewno"],
+    "level": 7
+  },
+  {
+    "id": 63,
+    "sign": "聞",
+    "onyomi": ["ブン", "モン"],
+    "onyomiRomaji": ["bun", "mon"],
+    "kunyomi": ["き(く)"],
+    "kunyomiRomaji": ["ki(ku)"],
+    "meaning": ["słyszeć", "słuchać", "prosić"],
+    "level": 7
+  },
+  {
+    "id": 64,
+    "sign": "食",
+    "onyomi": ["ショク", "ジキ"],
+    "onyomiRomaji": ["shoku", "jiki"],
+    "kunyomi": ["く(う)", "た(べる)", "は(む)"],
+    "kunyomiRomaji": ["k(u)", "ta(beru)", "ha(mu)"],
+    "meaning": ["jeść", "jedzenie"],
+    "level": 7
+  },
+  {
+    "id": 65,
+    "sign": "車",
+    "onyomi": ["シャ"],
+    "onyomiRomaji": ["sha"],
+    "kunyomi": ["くるま"],
+    "kunyomiRomaji": ["kuruma"],
+    "meaning": ["samochód", "koło"],
+    "level": 7
+  },
+  {
+    "id": 66,
+    "sign": "何",
+    "onyomi": ["カ"],
+    "onyomiRomaji": ["ka"],
+    "kunyomi": ["なに", "なん"],
+    "kunyomiRomaji": ["nani", "nan"],
+    "meaning": ["co"],
+    "level": 7
+  },
+  {
+    "id": 67,
+    "sign": "南",
+    "onyomi": ["ナン", "ナ"],
+    "onyomiRomaji": ["nan", "na"],
+    "kunyomi": ["みなみ"],
+    "kunyomiRomaji": ["minami"],
+    "meaning": ["południe"],
+    "level": 7
+  },
+  {
+    "id": 68,
+    "sign": "万",
+    "onyomi": ["マン", "バン"],
+    "onyomiRomaji": ["man", "ban"],
+    "kunyomi": ["-"],
+    "kunyomiRomaji": ["-"],
+    "meaning": ["dziesięć tysięcy", "10000"],
+    "level": 7
+  },
+  {
+    "id": 69,
+    "sign": "毎",
+    "onyomi": ["マイ"],
+    "onyomiRomaji": ["mai"],
+    "kunyomi": ["ごと(に)"],
+    "kunyomiRomaji": ["goto(ni)"],
+    "meaning": ["każdy"],
+    "level": 7
+  },
+  {
+    "id": 70,
+    "sign": "白",
+    "onyomi": ["ハク", "ビャク"],
+    "onyomiRomaji": ["haku", "byaku"],
+    "kunyomi": ["しろ(い)"],
+    "kunyomiRomaji": ["shiro(i)"],
+    "meaning": ["biały"],
+    "level": 7
+  },
+  {
+    "id": 71,
+    "sign": "天",
+    "onyomi": ["テン"],
+    "onyomiRomaji": ["ten"],
+    "kunyomi": ["あまつ"],
+    "kunyomiRomaji": ["amatsu"],
+    "meaning": ["niebiosa", "niebo", "cesarskie"],
+    "level": 8
+  },
+  {
+    "id": 72,
+    "sign": "母",
+    "onyomi": ["ボ"],
+    "onyomiRomaji": ["bo"],
+    "kunyomi": ["はは", "かあ"],
+    "kunyomiRomaji": ["haha", "kaa"],
+    "meaning": ["matka"],
+    "level": 8
+  },
+  {
+    "id": 73,
+    "sign": "火",
+    "onyomi": ["カ"],
+    "onyomiRomaji": ["ka"],
+    "kunyomi": ["ひ", "-び", "ほ-"],
+    "kunyomiRomaji": ["hi", "bi", "ho"],
+    "meaning": ["ogień"],
+    "level": 8
+  },
+  {
+    "id": 74,
+    "sign": "右",
+    "onyomi": ["ウ", "ユウ"],
+    "onyomiRomaji": ["u", "yuu"],
+    "kunyomi": ["みぎ"],
+    "kunyomiRomaji": ["migi"],
+    "meaning": ["prawo"],
+    "level": 8
+  },
+  {
+    "id": 75,
+    "sign": "読",
+    "onyomi": ["ドク", "トク", "トウ"],
+    "onyomiRomaji": ["doku", "toku", "tou"],
+    "kunyomi": ["よ(む)"],
+    "kunyomiRomaji": ["yo(mu)"],
+    "meaning": ["czytać"],
+    "level": 8
+  },
+  {
+    "id": 76,
+    "sign": "友",
+    "onyomi": ["ユウ"],
+    "onyomiRomaji": ["yuu"],
+    "kunyomi": ["とも"],
+    "kunyomiRomaji": ["tomo"],
+    "meaning": ["przyjaciel"],
+    "level": 8
+  },
+  {
+    "id": 77,
+    "sign": "左",
+    "onyomi": ["サ", "シャ"],
+    "onyomiRomaji": ["sa", "sha"],
+    "kunyomi": ["ひだり"],
+    "kunyomiRomaji": ["hidari"],
+    "meaning": ["lewo"],
+    "level": 8
+  },
+  {
+    "id": 78,
+    "sign": "休",
+    "onyomi": ["キュウ"],
+    "onyomiRomaji": ["kyuu"],
+    "kunyomi": ["やす(む)"],
+    "kunyomiRomaji": ["yasu(mu)"],
+    "meaning": ["odpoczynek", "dzień wolny", "emerytura", "sen"],
+    "level": 8
+  },
+  {
+    "id": 79,
+    "sign": "父",
+    "onyomi": ["フ"],
+    "onyomiRomaji": ["fu"],
+    "kunyomi": ["ちち", "とう"],
+    "kunyomiRomaji": ["chichi", "tou"],
+    "meaning": ["ojciec"],
+    "level": 8
+  },
+  {
+    "id": 80,
+    "sign": "雨",
+    "onyomi": ["ウ"],
+    "onyomiRomaji": ["u"],
+    "kunyomi": ["あめ", "あま"],
+    "kunyomiRomaji": ["ame", "ama"],
+    "meaning": ["deszcz"],
+    "level": 8
+  }
+]
