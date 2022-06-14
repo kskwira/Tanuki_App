@@ -1,6 +1,6 @@
 package com.example.tanuki_mob
 
-data class Kanji(val id: Int,
+data class Kanji (val id: Int,
                  val sign: String,
                  val onyomi: List<String>,
                  val onyomiRomaji: List<String>,

@@ -4,9 +4,13 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
+    <string name="button">New Button</string>
+    <string name="button_flip">Flip</string>
+    <string name="button_next">Next</string>
+    <string name="button_previous">Previous</string>
+    <string name="add_hiragana">Add Hiragana</string>
+    <string name="add_katakana">Add Katakana</string>
     <string name="add_kanji">Add Kanji</string>
-    <string name="previous">Previous</string>
     <string name="action_login">Login</string>
     <string name="hello_first_fragment">Hello</string>
 

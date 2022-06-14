@@ -1,5 +1,7 @@
 package com.example.tanuki_mob
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
@@ -28,7 +30,13 @@ class FirstFragment : Fragment() {
 
     private val db = Firebase.firestore
     private var usersRef = db.collection("/users")
+    private var hiraganaRef = db.collection("/hiragana")
+    private var katakanaRef = db.collection("/katakana")
     private var kanjiRef = db.collection("/kanji")
+
+    private lateinit var frontAnimation: AnimatorSet
+    private lateinit var backAnimation: AnimatorSet
+    private var isFront = true
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -41,34 +49,69 @@ class FirstFragment : Fragment() {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
 
+        val cardBack = binding.cardBack
+        val cardFront = binding.cardFront
+
         // read json from assets and assign to a String value
-        val jsonFileString = getJsonDataFromAsset(requireContext(), "kanji.json")
+        val hiraganaJsonFileString = getJsonDataFromAsset(requireContext(), "hiragana.json")
+        val katakanaJsonFileString = getJsonDataFromAsset(requireContext(), "katakana.json")
+        val kanjiJsonFileString = getJsonDataFromAsset(requireContext(), "kanji.json")
 
         // log the contents of the String
-//        if (jsonFileString != null) {
-//            Log.i("data", jsonFileString)
+//        if (kanjiJsonFileString != null) {
+//            Log.i("data", kanjiJsonFileString)
 //        }
 
         // use Gson to deserialize the specified Json into an object type List<Kanji>
         val gson = Gson()
+        val listHiraganaType = object : TypeToken<List<Kana>>() {}.type
+        val listKatakanaType = object : TypeToken<List<Kana>>() {}.type
         val listKanjiType = object : TypeToken<List<Kanji>>() {}.type
-        val kanjiList: List<Kanji> = gson.fromJson(jsonFileString, listKanjiType)
+        val hiraganaList: List<Kana> = gson.fromJson(hiraganaJsonFileString, listHiraganaType)
+        val katakanaList: List<Kana> = gson.fromJson(katakanaJsonFileString, listKatakanaType)
+        val kanjiList: List<Kanji> = gson.fromJson(kanjiJsonFileString, listKanjiType)
 
         // log the contents of the list
 //        kanjiList.forEachIndexed { idx, kanji -> Log.i("data", "> Item $idx:\n$kanji") }
 
-        // button to add Kanji from json to Firestore Database
-        binding.buttonSecond.setOnClickListener {
-            kanjiList.forEach {
-                addKanji(it)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
-            }
-        }
+//        // button to add Hiragana from json to Firestore Database
+//        binding.buttonAddHiragana.setOnClickListener {
+//            hiraganaList.forEach {
+//                addHiragana(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
+//
+//        // button to add Katakana from json to Firestore Database
+//        binding.buttonAddKatakana.setOnClickListener {
+//            katakanaList.forEach {
+//                addKatakana(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
+//
+//        // button to add Kanji from json to Firestore Database
+//        binding.buttonAddKanji.setOnClickListener {
+//            kanjiList.forEach {
+//                addKanji(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
 
         getSingleUserByName("Ada")
             .get()
@@ -85,12 +128,22 @@ class FirstFragment : Fragment() {
             .get()
             .addOnSuccessListener { documentReference ->
                 for (document in documentReference) {
+                    val meanArray = document.data["meaning"] as ArrayList<*>
+                    cardBack.text = meanArray[0] as CharSequence?
+                    cardFront.text = document.data["sign"] as CharSequence?
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents: ", exception)
             }
+
+        frontAnimation = AnimatorInflater.loadAnimator(context, R.animator.front_card_animator) as AnimatorSet
+        backAnimation = AnimatorInflater.loadAnimator(context, R.animator.back_card_animator) as AnimatorSet
+
+        binding.buttonFlip.setOnClickListener {
+            flipCard(requireContext(), cardFront, cardBack)
+        }
 
         return binding.root
     }
@@ -122,8 +175,41 @@ class FirstFragment : Fragment() {
         return kanjiRef.add(kanji)
     }
 
+    private fun addHiragana(hiragana: Kana): Task<DocumentReference> {
+        return hiraganaRef.add(hiragana)
+    }
+
+    private fun addKatakana(katakana: Kana): Task<DocumentReference> {
+        return katakanaRef.add(katakana)
+    }
+
     private fun getSingleUserByName(name: String): Query {
         return usersRef.whereEqualTo("first", name)
+    }
+
+    private fun flipCard(context: Context, frontView: View, backView: View) {
+        try {
+            val scale = context.resources.displayMetrics.density
+            frontView.cameraDistance = 8000 * scale
+            backView.cameraDistance = 8000 * scale
+
+            if(isFront) {
+                frontAnimation.setTarget(frontView)
+                backAnimation.setTarget(backView)
+                frontAnimation.start()
+                backAnimation.start()
+                isFront = false
+            } else {
+                frontAnimation.setTarget(backView)
+                backAnimation.setTarget(frontView)
+                backAnimation.start()
+                frontAnimation.start()
+                isFront = true
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Flip failed: ", e)
+        }
+
     }
 
     override fun onDestroyView() {

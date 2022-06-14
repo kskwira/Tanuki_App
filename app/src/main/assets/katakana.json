@@ -1,0 +1,644 @@
+[
+  {
+    "id": 1,
+    "sign": "ア",
+    "reading": "a",
+    "level": 1
+  },
+  {
+    "id": 2,
+    "sign": "イ",
+    "reading": "i",
+    "level": 1
+  },
+  {
+    "id": 3,
+    "sign": "ウ",
+    "reading": "u",
+    "level": 1
+  },
+  {
+    "id": 4,
+    "sign": "エ",
+    "reading": "e",
+    "level": 1
+  },
+  {
+    "id": 5,
+    "sign": "オ",
+    "reading": "o",
+    "level": 1
+  },
+  {
+    "id": 6,
+    "sign": "カ",
+    "reading": "ka",
+    "level": 1
+  },
+  {
+    "id": 7,
+    "sign": "キ",
+    "reading": "ki",
+    "level": 1
+  },
+  {
+    "id": 8,
+    "sign": "ク",
+    "reading": "ku",
+    "level": 1
+  },
+  {
+    "id": 9,
+    "sign": "ケ",
+    "reading": "ke",
+    "level": 1
+  },
+  {
+    "id": 10,
+    "sign": "コ",
+    "reading": "ko",
+    "level": 1
+  },
+  {
+    "id": 11,
+    "sign": "サ",
+    "reading": "sa",
+    "level": 1
+  },
+  {
+    "id": 12,
+    "sign": "シ",
+    "reading": "shi",
+    "level": 1
+  },
+  {
+    "id": 13,
+    "sign": "ス",
+    "reading": "su",
+    "level": 1
+  },
+  {
+    "id": 14,
+    "sign": "セ",
+    "reading": "se",
+    "level": 1
+  },
+  {
+    "id": 15,
+    "sign": "ソ",
+    "reading": "so",
+    "level": 1
+  },
+  {
+    "id": 16,
+    "sign": "タ",
+    "reading": "ta",
+    "level": 1
+  },
+  {
+    "id": 17,
+    "sign": "チ",
+    "reading": "chi",
+    "level": 1
+  },
+  {
+    "id": 18,
+    "sign": "ツ",
+    "reading": "tsu",
+    "level": 1
+  },
+  {
+    "id": 19,
+    "sign": "テ",
+    "reading": "te",
+    "level": 1
+  },
+  {
+    "id": 20,
+    "sign": "ト",
+    "reading": "to",
+    "level": 1
+  },
+  {
+    "id": 21,
+    "sign": "ナ",
+    "reading": "na",
+    "level": 1
+  },
+  {
+    "id": 22,
+    "sign": "ニ",
+    "reading": "ni",
+    "level": 1
+  },
+  {
+    "id": 23,
+    "sign": "ヌ",
+    "reading": "nu",
+    "level": 1
+  },
+  {
+    "id": 24,
+    "sign": "ネ",
+    "reading": "ne",
+    "level": 1
+  },
+  {
+    "id": 25,
+    "sign": "ノ",
+    "reading": "no",
+    "level": 1
+  },
+  {
+    "id": 26,
+    "sign": "ハ",
+    "reading": "ha",
+    "level": 1
+  },
+  {
+    "id": 27,
+    "sign": "ヒ",
+    "reading": "hi",
+    "level": 1
+  },
+  {
+    "id": 28,
+    "sign": "フ",
+    "reading": "fu",
+    "level": 1
+  },
+  {
+    "id": 29,
+    "sign": "ヘ",
+    "reading": "he",
+    "level": 1
+  },
+  {
+    "id": 30,
+    "sign": "ホ",
+    "reading": "ho",
+    "level": 1
+  },
+  {
+    "id": 31,
+    "sign": "マ",
+    "reading": "ma",
+    "level": 1
+  },
+  {
+    "id": 32,
+    "sign": "ミ",
+    "reading": "mi",
+    "level": 1
+  },
+  {
+    "id": 33,
+    "sign": "ム",
+    "reading": "mu",
+    "level": 1
+  },
+  {
+    "id": 34,
+    "sign": "メ",
+    "reading": "me",
+    "level": 1
+  },
+  {
+    "id": 35,
+    "sign": "モ",
+    "reading": "mo",
+    "level": 1
+  },
+  {
+    "id": 36,
+    "sign": "ヤ",
+    "reading": "ya",
+    "level": 1
+  },
+  {
+    "id": 37,
+    "sign": "ユ",
+    "reading": "yu",
+    "level": 1
+  },
+  {
+    "id": 38,
+    "sign": "ヨ",
+    "reading": "yo",
+    "level": 1
+  },
+  {
+    "id": 39,
+    "sign": "ラ",
+    "reading": "ra",
+    "level": 1
+  },
+  {
+    "id": 40,
+    "sign": "リ",
+    "reading": "ri",
+    "level": 1
+  },
+  {
+    "id": 41,
+    "sign": "ル",
+    "reading": "ru",
+    "level": 1
+  },
+  {
+    "id": 42,
+    "sign": "レ",
+    "reading": "re",
+    "level": 1
+  },
+  {
+    "id": 43,
+    "sign": "ロ",
+    "reading": "ro",
+    "level": 1
+  },
+  {
+    "id": 44,
+    "sign": "ワ",
+    "reading": "wa",
+    "level": 1
+  },
+  {
+    "id": 45,
+    "sign": "ヲ",
+    "reading": "wo",
+    "level": 1
+  },
+  {
+    "id": 46,
+    "sign": "ン",
+    "reading": "n",
+    "level": 1
+  },
+  {
+    "id": 47,
+    "sign": "ガ",
+    "reading": "ga",
+    "level": 2
+  },
+  {
+    "id": 48,
+    "sign": "ギ",
+    "reading": "gi",
+    "level": 2
+  },
+  {
+    "id": 49,
+    "sign": "グ",
+    "reading": "gu",
+    "level": 2
+  },
+  {
+    "id": 50,
+    "sign": "ゲ",
+    "reading": "ge",
+    "level": 2
+  },
+  {
+    "id": 51,
+    "sign": "ゴ",
+    "reading": "go",
+    "level": 2
+  },
+  {
+    "id": 52,
+    "sign": "ザ",
+    "reading": "za",
+    "level": 2
+  },
+  {
+    "id": 53,
+    "sign": "ジ",
+    "reading": "ji",
+    "level": 2
+  },
+  {
+    "id": 54,
+    "sign": "ズ",
+    "reading": "zu",
+    "level": 2
+  },
+  {
+    "id": 55,
+    "sign": "ゼ",
+    "reading": "ze",
+    "level": 2
+  },
+  {
+    "id": 56,
+    "sign": "ゾ",
+    "reading": "zo",
+    "level": 2
+  },
+  {
+    "id": 57,
+    "sign": "ダ",
+    "reading": "da",
+    "level": 2
+  },
+  {
+    "id": 58,
+    "sign": "ヂ",
+    "reading": "ji",
+    "level": 2
+  },
+  {
+    "id": 59,
+    "sign": "ヅ",
+    "reading": "zu",
+    "level": 2
+  },
+  {
+    "id": 60,
+    "sign": "デ",
+    "reading": "de",
+    "level": 2
+  },
+  {
+    "id": 61,
+    "sign": "ド",
+    "reading": "do",
+    "level": 2
+  },
+  {
+    "id": 62,
+    "sign": "バ",
+    "reading": "ba",
+    "level": 2
+  },
+  {
+    "id": 63,
+    "sign": "ビ",
+    "reading": "bi",
+    "level": 2
+  },
+  {
+    "id": 64,
+    "sign": "ブ",
+    "reading": "bu",
+    "level": 2
+  },
+  {
+    "id": 65,
+    "sign": "ベ",
+    "reading": "be",
+    "level": 2
+  },
+  {
+    "id": 66,
+    "sign": "ボ",
+    "reading": "bo",
+    "level": 2
+  },
+  {
+    "id": 67,
+    "sign": "パ",
+    "reading": "pa",
+    "level": 2
+  },
+  {
+    "id": 68,
+    "sign": "ピ",
+    "reading": "pi",
+    "level": 2
+  },
+  {
+    "id": 69,
+    "sign": "プ",
+    "reading": "pu",
+    "level": 2
+  },
+  {
+    "id": 70,
+    "sign": "ペ",
+    "reading": "pe",
+    "level": 2
+  },
+  {
+    "id": 71,
+    "sign": "ポ",
+    "reading": "po",
+    "level": 2
+  },
+  {
+    "id": 72,
+    "sign": "キャ",
+    "reading": "kya",
+    "level": 3
+  },
+  {
+    "id": 73,
+    "sign": "キュ",
+    "reading": "kyu",
+    "level": 3
+  },
+  {
+    "id": 74,
+    "sign": "キョ",
+    "reading": "kyo",
+    "level": 3
+  },
+  {
+    "id": 75,
+    "sign": "シャ",
+    "reading": "sha",
+    "level": 3
+  },
+  {
+    "id": 76,
+    "sign": "シュ",
+    "reading": "shu",
+    "level": 3
+  },
+  {
+    "id": 77,
+    "sign": "ショ",
+    "reading": "sho",
+    "level": 3
+  },
+  {
+    "id": 78,
+    "sign": "チャ",
+    "reading": "cha",
+    "level": 3
+  },
+  {
+    "id": 79,
+    "sign": "チュ",
+    "reading": "chu",
+    "level": 3
+  },
+  {
+    "id": 80,
+    "sign": "チョ",
+    "reading": "cho",
+    "level": 3
+  },
+  {
+    "id": 81,
+    "sign": "ニャ",
+    "reading": "nya",
+    "level": 3
+  },
+  {
+    "id": 82,
+    "sign": "ニュ",
+    "reading": "nyu",
+    "level": 3
+  },
+  {
+    "id": 83,
+    "sign": "ニョ",
+    "reading": "nyo",
+    "level": 3
+  },
+  {
+    "id": 84,
+    "sign": "ヒャ",
+    "reading": "hya",
+    "level": 3
+  },
+  {
+    "id": 85,
+    "sign": "ヒュ",
+    "reading": "hyu",
+    "level": 3
+  },
+  {
+    "id": 86,
+    "sign": "ヒョ",
+    "reading": "hyo",
+    "level": 3
+  },
+  {
+    "id": 87,
+    "sign": "ミャ",
+    "reading": "mya",
+    "level": 3
+  },
+  {
+    "id": 88,
+    "sign": "ミュ",
+    "reading": "myu",
+    "level": 3
+  },
+  {
+    "id": 89,
+    "sign": "ミョ",
+    "reading": "myo",
+    "level": 3
+  },
+  {
+    "id": 90,
+    "sign": "リャ",
+    "reading": "rya",
+    "level": 3
+  },
+  {
+    "id": 91,
+    "sign": "リュ",
+    "reading": "ryu",
+    "level": 3
+  },
+  {
+    "id": 92,
+    "sign": "リョ",
+    "reading": "ryo",
+    "level": 3
+  },
+  {
+    "id": 93,
+    "sign": "ギャ",
+    "reading": "gya",
+    "level": 3
+  },
+  {
+    "id": 94,
+    "sign": "ギュ",
+    "reading": "gyu",
+    "level": 3
+  },
+  {
+    "id": 95,
+    "sign": "ギョ",
+    "reading": "gyo",
+    "level": 3
+  },
+  {
+    "id": 96,
+    "sign": "ジャ",
+    "reading": "ja",
+    "level": 3
+  },
+  {
+    "id": 97,
+    "sign": "ジュ",
+    "reading": "ju",
+    "level": 3
+  },
+  {
+    "id": 98,
+    "sign": "ジョ",
+    "reading": "jo",
+    "level": 3
+  },
+  {
+    "id": 99,
+    "sign": "ヂャ",
+    "reading": "ja",
+    "level": 3
+  },
+  {
+    "id": 100,
+    "sign": "ヂュ",
+    "reading": "ju",
+    "level": 3
+  },
+  {
+    "id": 101,
+    "sign": "ヂョ",
+    "reading": "jo",
+    "level": 3
+  },
+  {
+    "id": 102,
+    "sign": "ビャ",
+    "reading": "bya",
+    "level": 3
+  },
+  {
+    "id": 103,
+    "sign": "ビュ",
+    "reading": "byu",
+    "level": 3
+  },
+  {
+    "id": 104,
+    "sign": "ビョ",
+    "reading": "byo",
+    "level": 3
+  },
+  {
+    "id": 105,
+    "sign": "ピャ",
+    "reading": "pya",
+    "level": 3
+  },
+  {
+    "id": 106,
+    "sign": "ピュ",
+    "reading": "pyu",
+    "level": 3
+  },
+  {
+    "id": 107,
+    "sign": "ピョ",
+    "reading": "pyo",
+    "level": 3
+  }
+]
