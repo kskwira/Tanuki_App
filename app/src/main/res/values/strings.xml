@@ -2,8 +2,8 @@
     <string name="app_name">Tanuki-mob</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label">Tanuki Quizzer</string>
+    <string name="second_fragment_label">Settings</string>
     <string name="button">New Button</string>
     <string name="button_flip">Flip</string>
     <string name="button_next">Next</string>
@@ -13,5 +13,6 @@
     <string name="add_kanji">Add Kanji</string>
     <string name="action_login">Login</string>
     <string name="hello_first_fragment">Hello</string>
+    <string name="question">Question %1$d of %2$d</string>
 
 </resources>

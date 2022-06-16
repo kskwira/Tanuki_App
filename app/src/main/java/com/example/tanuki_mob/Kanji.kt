@@ -1,11 +1,11 @@
 package com.example.tanuki_mob
 
-data class Kanji (val id: Int,
-                 val sign: String,
-                 val onyomi: List<String>,
-                 val onyomiRomaji: List<String>,
-                 val kunyomi: List<String>,
-                 val kunyomiRomaji: List<String>,
-                 val meaning: List<String>,
-                 val level: Int) {
+data class Kanji (val id: Int = 0,
+                 val sign: String = "",
+                 val onyomi: List<String> = listOf(),
+                 val onyomiRomaji: List<String> = listOf(),
+                 val kunyomi: List<String> = listOf(),
+                 val kunyomiRomaji: List<String> = listOf(),
+                 val meaning: List<String> = listOf(),
+                 val level: Int = 0) {
 }

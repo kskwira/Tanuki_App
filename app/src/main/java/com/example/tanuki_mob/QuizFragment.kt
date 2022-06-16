@@ -6,16 +6,15 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.tanuki_mob.databinding.FragmentFirstBinding
+import com.example.tanuki_mob.databinding.FragmentQuizBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -24,12 +23,11 @@ import java.io.IOException
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class QuizFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentQuizBinding? = null
 
     private val db = Firebase.firestore
-    private var usersRef = db.collection("/users")
     private var hiraganaRef = db.collection("/hiragana")
     private var katakanaRef = db.collection("/katakana")
     private var kanjiRef = db.collection("/kanji")
@@ -37,6 +35,9 @@ class FirstFragment : Fragment() {
     private lateinit var frontAnimation: AnimatorSet
     private lateinit var backAnimation: AnimatorSet
     private var isFront = true
+
+    private lateinit var kanjiList: ArrayList<Kanji>
+    private lateinit var correctAnswer: String
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -47,10 +48,12 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentQuizBinding.inflate(inflater, container, false)
 
         val cardBack = binding.cardBack
         val cardFront = binding.cardFront
+
+        kanjiList = ArrayList()
 
         // read json from assets and assign to a String value
         val hiraganaJsonFileString = getJsonDataFromAsset(requireContext(), "hiragana.json")
@@ -113,17 +116,6 @@ class FirstFragment : Fragment() {
 //            }
 //        }
 
-        getSingleUserByName("Ada")
-            .get()
-            .addOnSuccessListener { documentReference ->
-                for (document in documentReference) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
-
         getSingleKanjiById(1)
             .get()
             .addOnSuccessListener { documentReference ->
@@ -144,6 +136,21 @@ class FirstFragment : Fragment() {
         binding.buttonFlip.setOnClickListener {
             flipCard(requireContext(), cardFront, cardBack)
         }
+
+        binding.button1.setOnClickListener {
+            cardFront.text = this.kanjiList[0].sign
+            cardBack.text = this.kanjiList[0].meaning[0]
+        }
+
+        binding.button2.setOnClickListener {
+            cardFront.text = this.kanjiList[5].sign
+            cardBack.text = this.kanjiList[5].meaning[0]
+        }
+
+        binding.questionNumberTextView.text = getString(R.string.question, 1, kanjiList.size)
+
+        resetQuiz()
+
 
         return binding.root
     }
@@ -183,10 +190,6 @@ class FirstFragment : Fragment() {
         return katakanaRef.add(katakana)
     }
 
-    private fun getSingleUserByName(name: String): Query {
-        return usersRef.whereEqualTo("first", name)
-    }
-
     private fun flipCard(context: Context, frontView: View, backView: View) {
         try {
             val scale = context.resources.displayMetrics.density
@@ -210,6 +213,22 @@ class FirstFragment : Fragment() {
             Log.w(TAG, "Flip failed: ", e)
         }
 
+    }
+
+    private fun resetQuiz() {
+        kanjiList.clear()
+
+        kanjiRef.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val kanji = document.toObject<Kanji>()
+                    kanjiList.add(kanji)
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
     }
 
     override fun onDestroyView() {

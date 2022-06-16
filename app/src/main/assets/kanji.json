@@ -86,7 +86,7 @@
     "onyomiRomaji": ["hon"],
     "kunyomi": ["もと"],
     "kunyomiRomaji": ["moto"],
-    "meaning": ["książka", "teraźniejszość", "prawda", "licznik długich cylindrycznych rzeczy"],
+    "meaning": ["książka", "obecny", "główny", "licznik długich cylindrycznych rzeczy"],
     "level": 1
   },
   {
@@ -106,7 +106,7 @@
     "onyomiRomaji": ["chou"],
     "kunyomi": ["なが(い)", "おさ"],
     "kunyomiRomaji": ["naga(i)", "osa"],
-    "meaning": ["długi", "przywódca", "przełożony", "senior"],
+    "meaning": ["długi", "przywódca", "przełożony", "starszy"],
     "level": 2
   },
   {
@@ -116,7 +116,7 @@
     "onyomiRomaji": ["shutsu", "sui"],
     "kunyomi": ["で(る)", "だ(す)", "い(でる)"],
     "kunyomiRomaji": ["de(ru)", "da(su)", "i(deru)"],
-    "meaning": ["wyjście", "wyjdź"],
+    "meaning": ["wyjście", "wyjść"],
     "level": 2
   },
   {
@@ -136,7 +136,7 @@
     "onyomiRomaji": ["ji"],
     "kunyomi": ["とき", "-どき"],
     "kunyomiRomaji": ["toki", "doki"],
-    "meaning": ["czas", "godzina"],
+    "meaning": ["czas", "godzina", "liczebnik godzin"],
     "level": 2
   },
   {
@@ -156,7 +156,7 @@
     "onyomiRomaji": ["ken"],
     "kunyomi": ["み(る)", "み(せる)"],
     "kunyomiRomaji": ["mi(ru)", "mi(seru)"],
-    "meaning": ["zobacz", "nadzieje", "szanse", "pomysł"],
+    "meaning": ["zobaczyć", "nadzieje", "pomysł"],
     "level": 2
   },
   {
@@ -166,7 +166,7 @@
     "onyomiRomaji": ["getsu", "gatsu"],
     "kunyomi": ["つき"],
     "kunyomiRomaji": ["tsuki"],
-    "meaning": ["miesiąc", "księżyc"],
+    "meaning": ["miesiąc", "księżyc", "liczebnik miesięcy"],
     "level": 2
   },
   {
@@ -176,7 +176,7 @@
     "onyomiRomaji": ["bun", "fun", "bu"],
     "kunyomi": ["わ(ける)"],
     "kunyomiRomaji": ["wa(keru)"],
-    "meaning": ["część", "minuta", "zrozum"],
+    "meaning": ["część", "minuta", "rozumieć"],
     "level": 2
   },
   {
@@ -246,7 +246,7 @@
     "onyomiRomaji": ["tou"],
     "kunyomi": ["ひがし"],
     "kunyomiRomaji": ["higashi"],
-    "meaning": ["wschód"],
+    "meaning": ["wschód", "(kierunek świata)"],
     "level": 3
   },
   {
@@ -276,7 +276,7 @@
     "onyomiRomaji": ["kin", "kon", "gon"],
     "kunyomi": ["かね", "かな-", "-がね"],
     "kunyomiRomaji": ["kane", "kana", "gane"],
-    "meaning": ["złoto"],
+    "meaning": ["złoto", "pieniądze"],
     "level": 3
   },
   {
@@ -296,7 +296,7 @@
     "onyomiRomaji": ["nyuu"],
     "kunyomi": ["い(る)", "はい(る)"],
     "kunyomiRomaji": ["i(ru)", "hai(ru)"],
-    "meaning": ["wprowadź", "wstaw"],
+    "meaning": ["wprowadzić", "wejść", "wstawić"],
     "level": 3
   },
   {
@@ -386,7 +386,7 @@
     "onyomiRomaji": ["rai", "tai"],
     "kunyomi": ["く(る)", "きた(る)", "き", "こ"],
     "kunyomiRomaji": ["ku(ru)", "kita(ru)", "ki", "ko"],
-    "meaning": ["przyjdź", "z powodu", "następny", "powód"],
+    "meaning": ["przyjść", "następny", "powód"],
     "level": 4
   },
   {
@@ -436,7 +436,7 @@
     "onyomiRomaji": ["wa"],
     "kunyomi": ["はな(す)", "はなし"],
     "kunyomiRomaji": ["hana(su)", "hanashi"],
-    "meaning": ["opowieść", "rozmowa"],
+    "meaning": ["opowieść", "rozmowa", "rozmawiać"],
     "level": 5
   },
   {
@@ -456,7 +456,7 @@
     "onyomiRomaji": ["hoku"],
     "kunyomi": ["きた"],
     "kunyomiRomaji": ["kita"],
-    "meaning": ["północ"],
+    "meaning": ["północ", "(kierunek świata)"],
     "level": 5
   },
   {
@@ -466,7 +466,7 @@
     "onyomiRomaji": ["go"],
     "kunyomi": ["うま"],
     "kunyomiRomaji": ["uma"],
-    "meaning": ["południe", "znak konia"],
+    "meaning": ["południe", "(pora dnia)", "znak konia"],
     "level": 5
   },
   {
@@ -486,7 +486,7 @@
     "onyomiRomaji": ["sho"],
     "kunyomi": ["か(く)"],
     "kunyomiRomaji": ["kaku"],
-    "meaning": ["pisać"],
+    "meaning": ["pisać", "pismo"],
     "level": 5
   },
   {
@@ -566,7 +566,7 @@
     "onyomiRomaji": ["sei", "sai"],
     "kunyomi": ["にし"],
     "kunyomiRomaji": ["nishi"],
-    "meaning": ["zachód"],
+    "meaning": ["zachód", "(kierunek świata)"],
     "level": 6
   },
   {
@@ -596,7 +596,7 @@
     "onyomiRomaji": ["go"],
     "kunyomi": ["かた(る)"],
     "kunyomiRomaji": ["kata(ru)"],
-    "meaning": ["słowo", "mowa", "język"],
+    "meaning": ["słowo", "mowa", "język", "opowiadać"],
     "level": 6
   },
   {
@@ -666,7 +666,7 @@
     "onyomiRomaji": ["nan", "na"],
     "kunyomi": ["みなみ"],
     "kunyomiRomaji": ["minami"],
-    "meaning": ["południe"],
+    "meaning": ["południe", "(kierunek świata)"],
     "level": 7
   },
   {
@@ -736,7 +736,7 @@
     "onyomiRomaji": ["u", "yuu"],
     "kunyomi": ["みぎ"],
     "kunyomiRomaji": ["migi"],
-    "meaning": ["prawo"],
+    "meaning": ["prawo", "(kierunek)"],
     "level": 8
   },
   {
@@ -766,7 +766,7 @@
     "onyomiRomaji": ["sa", "sha"],
     "kunyomi": ["ひだり"],
     "kunyomiRomaji": ["hidari"],
-    "meaning": ["lewo"],
+    "meaning": ["lewo", "(kierunek)"],
     "level": 8
   },
   {
