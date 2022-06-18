@@ -8,8 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.tanuki_mob.databinding.FragmentQuizBinding
+import com.example.tanuki_mob.databinding.FragmentMainBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.Query
@@ -23,9 +22,9 @@ import java.io.IOException
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class QuizFragment : Fragment() {
+class MainFragment : Fragment() {
 
-    private var _binding: FragmentQuizBinding? = null
+    private var _binding: FragmentMainBinding? = null
 
     private val db = Firebase.firestore
     private var hiraganaRef = db.collection("/hiragana")
@@ -48,7 +47,7 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentQuizBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         val cardBack = binding.cardBack
         val cardFront = binding.cardFront
@@ -74,6 +73,47 @@ class QuizFragment : Fragment() {
         val katakanaList: List<Kana> = gson.fromJson(katakanaJsonFileString, listKatakanaType)
         val kanjiList: List<Kanji> = gson.fromJson(kanjiJsonFileString, listKanjiType)
 
+        // log the contents of the list
+//        kanjiList.forEachIndexed { idx, kanji -> Log.i("data", "> Item $idx:\n$kanji") }
+
+//        // button to add Hiragana from json to Firestore Database
+//        binding.buttonAddHiragana.setOnClickListener {
+//            hiraganaList.forEach {
+//                addHiragana(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
+//
+//        // button to add Katakana from json to Firestore Database
+//        binding.buttonAddKatakana.setOnClickListener {
+//            katakanaList.forEach {
+//                addKatakana(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
+//
+//        // button to add Kanji from json to Firestore Database
+//        binding.buttonAddKanji.setOnClickListener {
+//            kanjiList.forEach {
+//                addKanji(it)
+//                    .addOnSuccessListener { documentReference ->
+//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+//                    }
+//                    .addOnFailureListener { e ->
+//                        Log.w(TAG, "Error adding document", e)
+//                    }
+//            }
+//        }
 
         getSingleKanjiById(1)
             .get()
@@ -112,14 +152,6 @@ class QuizFragment : Fragment() {
 
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
     }
 
     private fun getJsonDataFromAsset(context: Context, fileName: String): String? {

@@ -11,8 +11,8 @@
         android:theme="@style/Theme.Tanukimob">
         <activity
             android:name=".MainActivity"
+            android:label="@string/main_fragment_label"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Tanukimob.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_fragment_label"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
