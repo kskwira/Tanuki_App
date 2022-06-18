@@ -74,47 +74,6 @@ class QuizFragment : Fragment() {
         val katakanaList: List<Kana> = gson.fromJson(katakanaJsonFileString, listKatakanaType)
         val kanjiList: List<Kanji> = gson.fromJson(kanjiJsonFileString, listKanjiType)
 
-        // log the contents of the list
-//        kanjiList.forEachIndexed { idx, kanji -> Log.i("data", "> Item $idx:\n$kanji") }
-
-//        // button to add Hiragana from json to Firestore Database
-//        binding.buttonAddHiragana.setOnClickListener {
-//            hiraganaList.forEach {
-//                addHiragana(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
-//
-//        // button to add Katakana from json to Firestore Database
-//        binding.buttonAddKatakana.setOnClickListener {
-//            katakanaList.forEach {
-//                addKatakana(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
-//
-//        // button to add Kanji from json to Firestore Database
-//        binding.buttonAddKanji.setOnClickListener {
-//            kanjiList.forEach {
-//                addKanji(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
 
         getSingleKanjiById(1)
             .get()
