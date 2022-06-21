@@ -10,5 +10,12 @@
     <string name="add_katakana">Add Katakana</string>
     <string name="add_kanji">Add Kanji</string>
     <string name="question">Question %1$d of %2$d</string>
+    <string name="number_of_choices">Number of Choices</string>
+    <string name="number_of_choices_description">Display 2, 4, 6 or 8 guess buttons</string>
+    <string name="sign_sets">Sign sets</string>
+    <string name="sign_sets_description">Sets to include in the quiz</string>
+    <string name="default_sign">Hiragana</string>
+    <string name="default_region_message">One Set must be selected. Setting Hiragana as the default Set.</string>
+    <string name="restarting_quiz">Quiz will restart with your new settings</string>
 
 </resources>

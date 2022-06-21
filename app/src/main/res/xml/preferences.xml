@@ -2,13 +2,22 @@
 <PreferenceScreen
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <SwitchPreferenceCompat
-        app:key="notifications"
-        app:title="Enable message notifications"/>
+    <ListPreference
+        app:entries="@array/guesses_list"
+        app:entryValues="@array/guesses_list"
+        app:key="pref_numberOfChoices"
+        app:title="@string/number_of_choices"
+        app:summary="@string/number_of_choices_description"
+        app:persistent="true"
+        app:defaultValue="4" />
 
-    <Preference
-        app:key="feedback"
-        app:title="Send feedback"
-        app:summary="Report technical issues or suggest new features"/>
+    <MultiSelectListPreference
+        app:entries="@array/signs_list_for_settings"
+        app:entryValues="@array/signs_list"
+        app:key="pref_signsToInclude"
+        app:title="@string/sign_sets"
+        app:summary="@string/sign_sets_description"
+        app:persistent="true"
+        app:defaultValue="@array/signs_list" />
 
 </PreferenceScreen>

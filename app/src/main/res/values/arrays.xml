@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="signs_list">
+        <item>Hiragana</item>
+        <item>Katakana</item>
+        <item>Kanji</item>
+    </string-array>
+
+    <string-array name="signs_list_for_settings">
+        <item>Hiragana</item>
+        <item>Katakana</item>
+        <item>Kanji</item>
+    </string-array>
+
+    <string-array name="guesses_list">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+
+</resources>

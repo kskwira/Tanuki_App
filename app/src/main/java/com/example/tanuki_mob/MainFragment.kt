@@ -4,9 +4,11 @@ import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.example.tanuki_mob.databinding.FragmentMainBinding
 import com.google.android.gms.tasks.Task
@@ -19,10 +21,14 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
+
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class MainFragment : Fragment() {
+
+    private var CHOICES = "pref_numberOfChoices"
+    private var SIGNS = "pref_signsToInclude"
 
     private var _binding: FragmentMainBinding? = null
 
@@ -36,7 +42,9 @@ class MainFragment : Fragment() {
     private var isFront = true
 
     private lateinit var kanjiList: ArrayList<Kanji>
-    private lateinit var correctAnswer: String
+    private lateinit var signsSet: Set<String>
+    private lateinit var guessLinearLayouts : Array<LinearLayout?>  // rows of answer Buttons
+    private var guessRows = 0 // number of rows displaying guess Buttons
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -51,6 +59,12 @@ class MainFragment : Fragment() {
 
         val cardBack = binding.cardBack
         val cardFront = binding.cardFront
+
+        guessLinearLayouts = arrayOfNulls(4)
+        guessLinearLayouts[0] = binding.row1LinearLayout
+        guessLinearLayouts[1] = binding.row2LinearLayout
+        guessLinearLayouts[2] = binding.row3LinearLayout
+        guessLinearLayouts[3] = binding.row4LinearLayout
 
         kanjiList = ArrayList()
 
@@ -148,9 +162,6 @@ class MainFragment : Fragment() {
 
         binding.questionNumberTextView.text = getString(R.string.question, 1, kanjiList.size)
 
-        resetQuiz()
-
-
         return binding.root
     }
 
@@ -206,7 +217,24 @@ class MainFragment : Fragment() {
 
     }
 
-    private fun resetQuiz() {
+    // update guessRows based on value in SharedPreferences
+    fun updateGuessRows(sharedPreferences: SharedPreferences) {
+        // get the number of guess buttons that should be displayed
+        val choices = sharedPreferences.getString(CHOICES, null)
+        guessRows = choices!!.toInt() / 2
+
+        // hide all guess button LinearLayouts
+        for (layout in guessLinearLayouts) layout?.visibility = View.GONE
+
+        // display appropriate guess button LinearLayouts
+        for (row in 0 until guessRows) guessLinearLayouts[row]?.visibility = View.VISIBLE
+    }
+
+    fun updateSigns(sharedPreferences: SharedPreferences) {
+        signsSet = sharedPreferences.getStringSet(SIGNS, null) as Set<String>
+    }
+
+    fun resetQuiz() {
         kanjiList.clear()
 
         kanjiRef.get()
@@ -214,16 +242,27 @@ class MainFragment : Fragment() {
                 for (document in documents) {
                     val kanji = document.toObject<Kanji>()
                     kanjiList.add(kanji)
-                    Log.d(TAG, "${document.id} => ${document.data}")
+//                    Log.d(TAG, "${document.id} => ${document.data}")
                 }
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents: ", exception)
             }
+
+        for (sign: String in signsSet) {
+            when(sign) {
+                "Hiragana" -> Log.w(TAG, "hiragana choice")
+                "Katakana" -> Log.w(TAG, "katakana choice")
+                "Kanji" -> Log.w(TAG, "kanji choice")
+                else -> Log.w(TAG, "signs choice error")
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
