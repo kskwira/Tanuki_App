@@ -117,10 +117,4 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, R.string.restarting_quiz, Toast.LENGTH_SHORT).show()
         }
 
-    override fun onStop() {
-        super.onStop()
-        PreferenceManager.getDefaultSharedPreferences(this)
-            .unregisterOnSharedPreferenceChangeListener(preferencesListener)
-    }
-
 }
