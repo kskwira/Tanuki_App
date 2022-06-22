@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set the Toolbar
         setSupportActionBar(binding.toolbar)
 
         // set default values in the app's SharedPreferences
@@ -45,15 +46,17 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
         if (preferencesChanged) {
-            // now that the default preferences have been set,
-            // initialize MainActivityFragment and start the quiz
+
+            // initialize MainActivityFragment and start the quiz after preferences changed
             val quizFragment: MainFragment? = supportFragmentManager
                 .findFragmentById(R.id.quizFragment) as MainFragment?
 
+            // update the number of guessRows
             quizFragment?.updateGuessRows(
                 PreferenceManager.getDefaultSharedPreferences(this)
             )
 
+            // update the signsSet
             quizFragment?.updateSigns(
                 PreferenceManager.getDefaultSharedPreferences(this)
             )
@@ -90,11 +93,13 @@ class MainActivity : AppCompatActivity() {
             val quizFragment: MainFragment? = supportFragmentManager
                 .findFragmentById(R.id.quizFragment) as MainFragment?
 
+            // update the number of guessRows and restart the quiz
             if (key == CHOICES) {
                 quizFragment?.updateGuessRows(sharedPreferences)
                 quizFragment?.resetQuiz()
                 Log.i(TAG, "Number of choice changed")
 
+            // update the signsSet and restart the quiz
             } else if (key == SIGNS) {
                 val signsSet = sharedPreferences.getStringSet(SIGNS, null)
 
@@ -103,17 +108,20 @@ class MainActivity : AppCompatActivity() {
                     quizFragment?.resetQuiz()
                     Log.i(TAG, "Signs set changed")
                 } else {
-                    // must select one sign--set Hiragana as default
+
+                    // if no set selected, choose Hiragana as a default
                     val editor = sharedPreferences.edit()
                     signsSet?.add(getString(R.string.default_sign))
                     editor.putStringSet(SIGNS, signsSet)
                     editor.apply()
 
+                    // display toast message for choosing default set
                     Toast.makeText(applicationContext, R.string.default_region_message, Toast.LENGTH_SHORT).show()
                     Log.i(TAG, "Signs set changed to default")
                 }
             }
 
+            // display toast message for preferences changed
             Toast.makeText(applicationContext, R.string.restarting_quiz, Toast.LENGTH_SHORT).show()
         }
 

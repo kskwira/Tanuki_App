@@ -17,5 +17,10 @@
     <string name="default_sign">Hiragana</string>
     <string name="default_region_message">One Set must be selected. Setting Hiragana as the default Set.</string>
     <string name="restarting_quiz">Quiz will restart with your new settings</string>
+    <string name="results">%1$d correct guesses, %2$.02f%% </string>
+    <string name="correct_answer">Correct!</string>
+    <string name="incorrect_answer">Incorrect!</string>
+    <string name="reset_quiz">Reset Quiz</string>
+    <string name="quiz_results">Quiz Results</string>
 
 </resources>

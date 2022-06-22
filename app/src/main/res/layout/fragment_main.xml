@@ -27,7 +27,8 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textSize="48sp"
-        android:background="@color/purple_200"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,8 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textSize="48sp"
-        android:background="@color/purple_200"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -217,28 +219,18 @@
         <!--            android:text="@string/add_kanji" />-->
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_flip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_flip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/row5LinearLayoutFirestore"
-        app:layout_constraintVertical_bias="0.1" />
-
     <TextView
+        android:id="@+id/answerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/answerTextView"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_flip"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@id/card_back"
+        app:layout_constraintVertical_bias="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
