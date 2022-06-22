@@ -2,9 +2,9 @@ package com.example.tanuki_mob
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.PositionAssertions.isCompletelyLeftOf
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 
 import org.junit.After
@@ -17,12 +17,27 @@ class MainFragmentTest {
 
     @Before
     fun setUp() {
+        FragmentScenario.launchInContainer(MainFragment::class.java)
     }
 
     @Test
     fun test_cardFrontInView() {
-        FragmentScenario.launchInContainer(MainFragment::class.java)
         onView(withId(R.id.card_front)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun test_buttonPresent() {
+        onView(withId(R.id.button1)).check((matches(isDisplayed())))
+    }
+
+    @Test
+    fun test_buttonClickable() {
+        onView(withId(R.id.button1)).check((matches(isClickable())))
+    }
+
+    @Test
+    fun test_buttonsInLine() {
+        onView(withId(R.id.button1)).check((isCompletelyLeftOf(withId(R.id.button2))))
     }
 
     @After
