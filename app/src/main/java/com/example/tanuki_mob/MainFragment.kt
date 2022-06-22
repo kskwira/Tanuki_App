@@ -15,15 +15,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.tanuki_mob.databinding.FragmentMainBinding
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import java.io.IOException
 import java.security.SecureRandom
 
 
@@ -100,67 +94,6 @@ class MainFragment : Fragment() {
         frontAnimation = AnimatorInflater.loadAnimator(context, R.animator.front_card_animator) as AnimatorSet
         backAnimation = AnimatorInflater.loadAnimator(context, R.animator.back_card_animator) as AnimatorSet
 
-        // read json from assets and assign to a String value
-        val hiraganaJsonFileString = getJsonDataFromAsset(requireContext(), "hiragana.json")
-        val katakanaJsonFileString = getJsonDataFromAsset(requireContext(), "katakana.json")
-        val kanjiJsonFileString = getJsonDataFromAsset(requireContext(), "kanji.json")
-
-        // log the contents of the String
-//        if (kanjiJsonFileString != null) {
-//            Log.i("data", kanjiJsonFileString)
-//        }
-
-        // use Gson to deserialize the specified Json into an object type List<Kanji>
-        val gson = Gson()
-        val listHiraganaType = object : TypeToken<List<Kana>>() {}.type
-        val listKatakanaType = object : TypeToken<List<Kana>>() {}.type
-        val listKanjiType = object : TypeToken<List<Kanji>>() {}.type
-        val hiraganaList: List<Kana> = gson.fromJson(hiraganaJsonFileString, listHiraganaType)
-        val katakanaList: List<Kana> = gson.fromJson(katakanaJsonFileString, listKatakanaType)
-        val kanjiList: List<Kanji> = gson.fromJson(kanjiJsonFileString, listKanjiType)
-
-        // log the contents of the list
-//        kanjiList.forEachIndexed { idx, kanji -> Log.i("data", "> Item $idx:\n$kanji") }
-
-//        // button to add Hiragana from json to Firestore Database
-//        binding.buttonAddHiragana.setOnClickListener {
-//            hiraganaList.forEach {
-//                addHiragana(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
-//
-//        // button to add Katakana from json to Firestore Database
-//        binding.buttonAddKatakana.setOnClickListener {
-//            katakanaList.forEach {
-//                addKatakana(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
-//
-//        // button to add Kanji from json to Firestore Database
-//        binding.buttonAddKanji.setOnClickListener {
-//            kanjiList.forEach {
-//                addKanji(it)
-//                    .addOnSuccessListener { documentReference ->
-//                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//                    }
-//                    .addOnFailureListener { e ->
-//                        Log.w(TAG, "Error adding document", e)
-//                    }
-//            }
-//        }
-
         // get all kanji from Firestore
         kanjiRef.get()
             .addOnSuccessListener { documents ->
@@ -182,34 +115,6 @@ class MainFragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    // function to read Json data from assets
-    private fun getJsonDataFromAsset(context: Context, fileName: String): String? {
-        val jsonString: String
-        try {
-            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-        } catch (ioException: IOException) {
-            ioException.printStackTrace()
-            return null
-        }
-        return jsonString
-    }
-
-    private fun getSingleKanjiById(id: Int): Query {
-        return kanjiRef.whereEqualTo("id", id)
-    }
-
-    private fun addKanji(kanji: Kanji): Task<DocumentReference> {
-        return kanjiRef.add(kanji)
-    }
-
-    private fun addHiragana(hiragana: Kana): Task<DocumentReference> {
-        return hiraganaRef.add(hiragana)
-    }
-
-    private fun addKatakana(katakana: Kana): Task<DocumentReference> {
-        return katakanaRef.add(katakana)
     }
 
     // function for flip card animation

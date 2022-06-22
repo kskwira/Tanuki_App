@@ -180,45 +180,6 @@
             android:text="@string/button" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/row5LinearLayoutFirestore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/row4LinearLayout"
-        app:layout_constraintVertical_bias="0.02">
-
-        <!--        <Button-->
-        <!--            android:id="@+id/button_add_hiragana"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_weight="1"-->
-        <!--            android:lines="2"-->
-        <!--            android:text="@string/add_hiragana" />-->
-
-        <!--        <Button-->
-        <!--            android:id="@+id/button_add_katakana"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_weight="1"-->
-        <!--            android:lines="2"-->
-        <!--            android:text="@string/add_katakana" />-->
-
-        <!--        <Button-->
-        <!--            android:id="@+id/button_add_kanji"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_weight="1"-->
-        <!--            android:lines="2"-->
-        <!--            android:text="@string/add_kanji" />-->
-    </LinearLayout>
-
     <TextView
         android:id="@+id/answerTextView"
         android:layout_width="wrap_content"
