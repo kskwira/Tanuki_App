@@ -67,9 +67,9 @@ class MainFragment : Fragment() {
 
     private lateinit var questionNumberTextView : TextView // shows current question #
     private lateinit var guessLinearLayouts : Array<LinearLayout?>  // rows of answer Buttons
-    private var answerTextView : TextView? = null // displays correct answer
-    private var cardFront : TextView? = null // displays card front
-    private var cardBack : TextView? = null // displays card back
+    private lateinit var answerTextView : TextView // displays correct answer
+    private lateinit var cardFront : TextView // displays card front
+    private lateinit var cardBack : TextView // displays card back
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -280,7 +280,7 @@ class MainFragment : Fragment() {
     // load the next sign after user chooses an answer
     private fun loadNextSign() {
 
-        answerTextView!!.text = "" // clear answerTextView
+        answerTextView.text = "" // clear answerTextView
 
         // display current question number
         questionNumberTextView.text = context?.getString(
@@ -298,8 +298,8 @@ class MainFragment : Fragment() {
                 correctAnswerKana = nextHiragana.reading // update the correct answer
 
                 // display the next sign on the flip card
-                cardFront?.text = nextHiragana.sign
-                cardBack?.text = nextHiragana.reading
+                cardFront.text = nextHiragana.sign
+                cardBack.text = nextHiragana.reading
 
                 // shuffle sign meanings
                 quizListHiraganaReading.shuffle()
@@ -337,8 +337,8 @@ class MainFragment : Fragment() {
                 correctAnswerKana = nextKatakana.reading // update the correct answer
 
                 // display the next sign on the flip card
-                cardFront?.text = nextKatakana.sign
-                cardBack?.text = nextKatakana.reading
+                cardFront.text = nextKatakana.sign
+                cardBack.text = nextKatakana.reading
 
                 // shuffle sign meanings
                 quizListKatakanaReading.shuffle()
@@ -377,8 +377,8 @@ class MainFragment : Fragment() {
                 correctAnswerKanji = nextKanji.meaning // update the correct answer
 
                 // display the next sign on the flip card
-                cardFront?.text = nextKanji.sign
-                cardBack?.text = nextKanji.meaning[0]
+                cardFront.text = nextKanji.sign
+                cardBack.text = nextKanji.meaning[0]
 
                 // shuffle sign meanings
                 quizListKanjiMeaning.shuffle()
@@ -432,7 +432,7 @@ class MainFragment : Fragment() {
                 else -> Log.w(TAG, "signs choice error")
             }
 
-            flipCard(requireContext(), cardFront!!, cardBack!!) //flip the card
+            flipCard(requireContext(), cardFront, cardBack) //flip the card
             ++totalGuesses // increment number of guesses the user has made
 
             // answer was correct
@@ -441,8 +441,8 @@ class MainFragment : Fragment() {
                 ++correctAnswers
 
                 // display "Correct!" in green text
-                answerTextView!!.setText(R.string.correct_answer)
-                answerTextView!!.setTextColor(
+                answerTextView.setText(R.string.correct_answer)
+                answerTextView.setTextColor(
                     resources.getColor(
                         R.color.correct_answer,
                         requireContext().theme
@@ -473,7 +473,7 @@ class MainFragment : Fragment() {
                     // flip the card after a 2-second delay
                     handler!!.postDelayed(
                         {
-                            flipCard(requireContext(), cardFront!!, cardBack!!)
+                            flipCard(requireContext(), cardFront, cardBack)
                         }, 2000
                     )
 
@@ -485,7 +485,7 @@ class MainFragment : Fragment() {
                     handler!!.postDelayed(
                         {
                             // flip the card after a 2-second delay
-                            flipCard(requireContext(), cardFront!!, cardBack!!)
+                            flipCard(requireContext(), cardFront, cardBack)
 
                             // load the next sign after a 1-second delay
                             handler!!.postDelayed(
@@ -504,8 +504,8 @@ class MainFragment : Fragment() {
             } else {
 
                 // display "Incorrect!" in red text
-                answerTextView!!.setText(R.string.incorrect_answer)
-                answerTextView!!.setTextColor(
+                answerTextView.setText(R.string.incorrect_answer)
+                answerTextView.setTextColor(
                     resources.getColor(
                         R.color.incorrect_answer, requireContext().theme
                     )
@@ -535,7 +535,7 @@ class MainFragment : Fragment() {
                     // flip the card after a 2-second delay
                     handler!!.postDelayed(
                         {
-                            flipCard(requireContext(), cardFront!!, cardBack!!)
+                            flipCard(requireContext(), cardFront, cardBack)
                         }, 2000
                     )
 
@@ -546,7 +546,7 @@ class MainFragment : Fragment() {
                     handler!!.postDelayed(
                         {
                             // flip the card after a 2-second delay
-                            flipCard(requireContext(), cardFront!!, cardBack!!)
+                            flipCard(requireContext(), cardFront, cardBack)
 
                             // load the next sign after a 1-second delay
                             handler!!.postDelayed(
@@ -560,7 +560,6 @@ class MainFragment : Fragment() {
                 }
             }
         }
-
 
     // function for flip card animation
     private fun flipCard(context: Context, frontView: View, backView: View) {
