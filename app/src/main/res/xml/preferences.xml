@@ -11,13 +11,13 @@
         app:persistent="true"
         app:defaultValue="4" />
 
-    <MultiSelectListPreference
-        app:entries="@array/signs_list_for_settings"
+    <ListPreference
+        app:entries="@array/signs_list"
         app:entryValues="@array/signs_list"
         app:key="pref_signsToInclude"
         app:title="@string/sign_sets"
         app:summary="@string/sign_sets_description"
         app:persistent="true"
-        app:defaultValue="@array/signs_list" />
+        app:defaultValue="@string/default_sign" />
 
 </PreferenceScreen>

@@ -101,24 +101,9 @@ class MainActivity : AppCompatActivity() {
 
             // update the signsSet and restart the quiz
             } else if (key == SIGNS) {
-                val signsSet = sharedPreferences.getStringSet(SIGNS, null)
-
-                if (signsSet != null && signsSet.isNotEmpty()) {
-                    quizFragment?.updateSigns(sharedPreferences)
-                    quizFragment?.resetQuiz()
-                    Log.i(TAG, "Signs set changed")
-                } else {
-
-                    // if no set selected, choose Hiragana as a default
-                    val editor = sharedPreferences.edit()
-                    signsSet?.add(getString(R.string.default_sign))
-                    editor.putStringSet(SIGNS, signsSet)
-                    editor.apply()
-
-                    // display toast message for choosing default set
-                    Toast.makeText(applicationContext, R.string.default_region_message, Toast.LENGTH_SHORT).show()
-                    Log.i(TAG, "Signs set changed to default")
-                }
+                quizFragment?.updateSigns(sharedPreferences)
+                quizFragment?.resetQuiz()
+                Log.i(TAG, "Signs set changed")
             }
 
             // display toast message for preferences changed
