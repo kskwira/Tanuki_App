@@ -15,6 +15,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.tanuki_mob.databinding.FragmentMainBinding
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -37,16 +38,16 @@ class MainFragment : Fragment() {
     private var hiraganaRef = db.collection("/hiragana")
     private var katakanaRef = db.collection("/katakana")
     private var kanjiRef = db.collection("/kanji")
+    private var kanjiArrayList: ArrayList<Kanji> = getSignsKanji(kanjiRef)
+    private var hiraganaArrayList: ArrayList<Kana> = getSignsKana("Hiragana", hiraganaRef)
+    private var katakanaArrayList: ArrayList<Kana> = getSignsKana("Katakana", katakanaRef)
 
     // animations
     private lateinit var frontAnimation: AnimatorSet
     private lateinit var backAnimation: AnimatorSet
     private var isFront = true
 
-    // signs and correct answer sets
-    private lateinit var kanjiArrayList: ArrayList<Kanji>
-    private lateinit var hiraganaArrayList: ArrayList<Kana>
-    private lateinit var katakanaArrayList: ArrayList<Kana>
+    // quiz signs and correct answer sets
     private lateinit var quizListKanji: ArrayList<Kanji>
     private lateinit var quizListHiragana: ArrayList<Kana>
     private lateinit var quizListKatakana: ArrayList<Kana>
@@ -106,42 +107,6 @@ class MainFragment : Fragment() {
         frontAnimation = AnimatorInflater.loadAnimator(context, R.animator.front_card_animator) as AnimatorSet
         backAnimation = AnimatorInflater.loadAnimator(context, R.animator.back_card_animator) as AnimatorSet
 
-        // get all kanji from Firestore
-        kanjiRef.get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val kanji = document.toObject<Kanji>()
-                    kanjiArrayList.add(kanji)
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting kanji from Firestore: ", exception)
-            }
-
-        // get all hiragana from Firestore
-        hiraganaRef.get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val hiragana = document.toObject<Kana>()
-                    hiraganaArrayList.add(hiragana)
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting kanji from Firestore: ", exception)
-            }
-
-        // get all katakana from Firestore
-        katakanaRef.get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val katakana = document.toObject<Kana>()
-                    katakanaArrayList.add(katakana)
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting kanji from Firestore: ", exception)
-            }
-
         // configure listeners for the guess Buttons
         for (row in guessLinearLayouts) {
             for (column in 0 until row!!.childCount) {
@@ -151,6 +116,50 @@ class MainFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    // function to get all Kanji from FireStore
+    fun getSignsKanji(ref: CollectionReference): ArrayList<Kanji> {
+        ref.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val sign = document.toObject<Kanji>()
+                    kanjiArrayList.add(sign)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting kanji from Firestore: ", exception)
+            }
+
+        return kanjiArrayList
+    }
+
+    // function to get all Hiragana or Katakana from FireStore
+    fun getSignsKana(type: String, ref: CollectionReference): ArrayList<Kana> {
+        ref.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    when (type) {
+                        "Hiragana" -> {
+                            val sign = document.toObject<Kana>()
+                            hiraganaArrayList.add(sign)
+                        }
+                        "Katakana" -> {
+                            val sign = document.toObject<Kana>()
+                            katakanaArrayList.add(sign)
+                        }
+
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting $type from Firestore: ", exception)
+            }
+
+        return if (type == "Hiragana")
+            hiraganaArrayList
+        else
+            katakanaArrayList
     }
 
     // update guessRows based on value in SharedPreferences
@@ -183,7 +192,7 @@ class MainFragment : Fragment() {
         quizListHiraganaReading.clear() // clear prior list of quiz hiragana meanings
         quizListKatakanaReading.clear() // clear prior list of quiz katakana meanings
 
-        // 2-second delay to update the sing quiz lists and load the next sign
+        // 5-second delay to update the sing quiz lists and load the next sign
         // required due to asynchronous Firebase API
         handler!!.postDelayed(
             {
@@ -272,7 +281,7 @@ class MainFragment : Fragment() {
                 }
 
                 loadNextSign()
-            }, 2000
+            }, 5000
         )
 
     }
@@ -478,7 +487,7 @@ class MainFragment : Fragment() {
                     )
 
 
-                // quiz not over
+                    // quiz not over
                 } else {
 
                     // flip the card and load the next sign
@@ -500,7 +509,7 @@ class MainFragment : Fragment() {
 
                 }
 
-            // answer was incorrect
+                // answer was incorrect
             } else {
 
                 // display "Incorrect!" in red text
@@ -539,7 +548,7 @@ class MainFragment : Fragment() {
                         }, 2000
                     )
 
-                // quiz not over
+                    // quiz not over
                 } else {
 
                     // flip the card and load the next sign
